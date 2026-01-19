@@ -26,6 +26,7 @@ exports.getProfile = async (req, res) => {
     const profile = await userService.getProfile(id);
     res.json(profile);
   } catch (error) {
+    console.error('Get profile error:', error);
     res.status(500).json({ error: error.message });
   }
 };

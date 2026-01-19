@@ -14,8 +14,24 @@ export const AuthContextProvider = ({ children }) => {
         });
         if (error) {
             console.log("Error signing up:", error.message);
+            return { data, error };
         } else {
             console.log("User signed up:", data);
+            // Create profile record for new user
+            if (data?.user?.id) {
+                const { error: profileError } = await supabase
+                    .from('profiles')
+                    .insert({
+                        id: data.user.id,
+                        email: email,
+                        created_at: new Date(),
+                        updated_at: new Date()
+                    });
+                if (profileError) {
+                    console.log("Error creating profile:", profileError.message);
+                }
+            }
+            return { data, error };
         }
     }
 

@@ -22,8 +22,13 @@ class DashboardService {
       .select('*')
       .eq('id', userId);
     
-    if (error) throw new Error(error.message);
-    return data;
+    if (error) {
+      if (error.message.includes('not found')) {
+        return [];
+      }
+      throw new Error(error.message);
+    }
+    return data || [];
   }
 
   // Total Questions Methods
@@ -47,8 +52,13 @@ class DashboardService {
       .select('*')
       .eq('id', userId);
     
-    if (error) throw new Error(error.message);
-    return data;
+    if (error) {
+      if (error.message.includes('not found')) {
+        return [];
+      }
+      throw new Error(error.message);
+    }
+    return data || [];
   }
 
   // Combined Dashboard Data

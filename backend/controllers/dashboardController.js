@@ -26,9 +26,11 @@ class DashboardController {
   static async getDashboardData(req, res) {
     try {
       const userId = req.user.id;
+      console.log('Fetching dashboard data for user:', userId);
       const result = await DashboardService.getDashboardData(userId);
       res.status(200).json(result);
     } catch (error) {
+      console.error('Dashboard error:', error.message);
       res.status(400).json({ error: error.message });
     }
   }
