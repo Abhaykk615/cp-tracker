@@ -24,7 +24,7 @@ services:
     publishDir: dist
     envVars:
       - key: VITE_API_URL
-        value: https://cpier-backend.onrender.com
+        value: https://cp-tracker-58ap.onrender.com
       - fromGroup: supabase-config
 
 # Environment Groups
