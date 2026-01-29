@@ -29,7 +29,7 @@ export default function ProfileForm() {
   const [success, setSuccess] = useState('');
   const {session} = UserAuth();
   const navigate = useNavigate();
-  const API_BASE = import.meta.env.VITE_BACKEND_URL;
+  const API_BASE = import.meta.env.VITE_API_URL;
 
 
   useEffect(() => {

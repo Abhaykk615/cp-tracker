@@ -7,7 +7,7 @@ export const UserProfileProvider = ({ children }) => {
   const [profileData, setProfileData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const API_BASE = import.meta.env.VITE_BACKEND_URL;
+  const API_BASE = import.meta.env.VITE_API_URL;
   
   useEffect(() => {
     const fetchProfile = async () => {

@@ -16,7 +16,7 @@ const Dashboard = () => {
   const { session } = UserAuth();
   const [dashboardData, setDashboardData] = useState(null);
   const [loading, setLoading] = useState(true);
-  const API_BASE = import.meta.env.VITE_BACKEND_URL;
+  const API_BASE = import.meta.env.VITE_API_URL;
 
   const user = {
     name: profileData?.name || "",

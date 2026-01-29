@@ -57,7 +57,7 @@ const LeetcodePage = () => {
   const { profileData, error: profileError } = useUserProfile();
   const [username, setUsername] = useState(null);
   const { session, loading: authLoading } = UserAuth();
-  const API_BASE = import.meta.env.VITE_BACKEND_URL;
+  const API_BASE = import.meta.env.VITE_API_URL;
 
   // Function to upsert LeetCode data with null values
   const upsertLeetCodeData = async () => {
