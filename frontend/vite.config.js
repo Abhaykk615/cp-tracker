@@ -4,11 +4,8 @@ import react from '@vitejs/plugin-react';
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '');
   
-  // For production on Render, we need to set the base path
-  const isProduction = mode === 'production';
-  
   return {
-    base: isProduction ? '/' : '/',
+    base: '/',
     plugins: [react()],
     server: {
       proxy: {
