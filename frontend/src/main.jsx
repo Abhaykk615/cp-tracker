@@ -6,6 +6,7 @@ import { router } from './router.jsx';
 import { AuthContextProvider } from './context/AuthContext.jsx';
 import { UserProfileProvider } from './context/UserProfileContext.jsx';
 
+// App initialization
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <AuthContextProvider>
