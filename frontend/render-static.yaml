@@ -1,0 +1,14 @@
+# Render Static Site Configuration
+# This file tells Render how to handle routing for React SPA
+
+services:
+  - type: web
+    name: cpier-frontend
+    env: static
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    publishDir: dist
+    routes:
+      - type: rewrite
+        source: /(.*) 
+        destination: /index.html
