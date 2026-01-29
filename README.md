@@ -417,36 +417,18 @@ npm start
 
 ## 🤝 Contributing
 
-We welcome contributions! Here's how you can help:
+This is currently a **solo project** developed by **Abhaykk615**. While I appreciate interest in the project, I'm focusing on maintaining the vision and quality of CPier as a personal endeavor.
 
-### 🎯 Areas to Contribute
-- 🐛 **Bug Fixes**: Help squash those bugs
-- ✨ **New Features**: Suggest and implement features
-- 📚 **Documentation**: Improve docs and guides
-- 🎨 **UI/UX**: Enhance user experience
-- ⚡ **Performance**: Optimize and speed up
+### 🎯 Project Philosophy
+- **Quality over Quantity**: Focus on well-crafted features
+- **User-Centric**: Every feature solves real user problems
+- **Clean Code**: Maintainable and readable codebase
+- **Performance**: Fast and efficient user experience
 
-### 📝 Development Workflow
-1. **Fork** the repository
-2. **Create** a feature branch
-   ```bash
-   git checkout -b feature/amazing-feature
-   ```
-3. **Commit** your changes
-   ```bash
-   git commit -m 'Add amazing feature'
-   ```
-4. **Push** to the branch
-   ```bash
-   git push origin feature/amazing-feature
-   ```
-5. **Open** a Pull Request
-
-### 🎖️ Guidelines
-- Follow the existing code style
-- Write tests for new features
-- Update documentation
-- Be respectful and constructive
+### 📝 Feedback & Suggestions
+- 🐛 **Bug Reports**: Welcome via GitHub Issues
+- 💡 **Feature Ideas**: Open to suggestions
+- 📧 **Direct Contact**: For collaborations or inquiries
 
 ---
 
@@ -462,10 +444,8 @@ We welcome contributions! Here's how you can help:
 - [CodeChef API](https://www.codechef.com/api/)
 - [CodeForces API](https://codeforces.com/api/help)
 
-### 🌟 Contributors
-<a href="https://github.com/Abhaykk615/cp-tracker/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=Abhaykk615/cp-tracker" />
-</a>
+### 🌟 About the Developer
+This project is developed and maintained by **Abhaykk615** with passion for competitive programming and data visualization.
 
 ---
 
@@ -500,7 +480,7 @@ We welcome contributions! Here's how you can help:
 ---
 
 <div align="center">
-  <strong>🚀 Made with ❤️ by the competitive programming community</strong>
+  <strong>🚀 Made with ❤️ by <a href="https://github.com/Abhaykk615">Abhaykk615</a></strong>
 </div>
 
 <div align="center">
