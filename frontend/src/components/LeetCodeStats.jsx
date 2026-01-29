@@ -8,7 +8,7 @@ const LeetcodeStats = ({ username }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [expandedTopics, setExpandedTopics] = useState(false);
-  const API_BASE = import.meta.env.VITE_API_URL;
+  const API_BASE = import.meta.env.VITE_API_URL || "https://cp-tracker-58ap.onrender.com";
   const { session } = UserAuth();
 
   const fetchStats = async () => {

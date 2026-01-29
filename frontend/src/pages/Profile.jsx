@@ -51,7 +51,7 @@ export default function Profile() {
   });
   const { session, signOut } = UserAuth();
   const navigate = useNavigate();
-  const API_BASE = import.meta.env.VITE_API_URL;
+  const API_BASE = import.meta.env.VITE_API_URL || "https://cp-tracker-58ap.onrender.com";
 
   useEffect(() => {
     const fetchProfile = async () => {

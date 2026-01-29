@@ -8,7 +8,7 @@ const CombinedHeatmap = ({ profileData }) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [selectedPlatform, setSelectedPlatform] = useState('all');
-  const API_BASE = import.meta.env.VITE_API_URL;
+  const API_BASE = import.meta.env.VITE_API_URL || "https://cp-tracker-58ap.onrender.com";
 
   useEffect(() => {
     if (

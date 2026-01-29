@@ -19,7 +19,7 @@ const Contest = () => {
     const timeValue = parseFloat(time);
     return unit.includes('hour') ? Math.round(timeValue * 60) : timeValue;
   };
-  const API_BASE = import.meta.env.VITE_API_URL;
+  const API_BASE = import.meta.env.VITE_API_URL || "https://cp-tracker-58ap.onrender.com";
 
   useEffect(() => {
     const fetchContests = async () => {

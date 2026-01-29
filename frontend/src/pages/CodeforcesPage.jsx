@@ -14,7 +14,7 @@ const CodeforcesPage = () => {
   const [loading, setLoading] = useState(true);
   const [userData, setUserData] = useState(null);
   const [fetchError, setFetchError] = useState('');
-  const API_BASE = import.meta.env.VITE_API_URL;
+  const API_BASE = import.meta.env.VITE_API_URL || "https://cp-tracker-58ap.onrender.com";
   const { session } = UserAuth();
 
   // Get username from profile data

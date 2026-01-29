@@ -7,7 +7,7 @@ export const UserProfileProvider = ({ children }) => {
   const [profileData, setProfileData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const API_BASE = import.meta.env.VITE_API_URL;
+  const API_BASE = import.meta.env.VITE_API_URL || "https://cp-tracker-58ap.onrender.com" || 'https://cp-tracker-58ap.onrender.com';
   
   useEffect(() => {
     const fetchProfile = async () => {
