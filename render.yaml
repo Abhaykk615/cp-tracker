@@ -1,0 +1,39 @@
+services:
+  # Backend Service
+  - type: web
+    name: cpier-backend
+    env: node
+    repo: https://github.com/Abhaykk615/cp-tracker.git
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - fromGroup: supabase-config
+
+  # Frontend Service
+  - type: web
+    name: cpier-frontend
+    env: static
+    repo: https://github.com/Abhaykk615/cp-tracker.git
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    publishDir: dist
+    envVars:
+      - key: VITE_API_URL
+        value: https://cpier-backend.onrender.com
+      - fromGroup: supabase-config
+
+# Environment Groups
+environmentGroups:
+  - name: supabase-config
+    envVars:
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_ANON_KEY
+        sync: false
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
