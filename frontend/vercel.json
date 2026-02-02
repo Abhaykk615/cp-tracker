@@ -6,7 +6,7 @@
   "outputDirectory": "dist",
   "installCommand": "npm install",
   "env": {
-    "VITE_API_URL": "https://cpier-backend.onrender.com",
+    "VITE_API_URL": "https://cp-tracker-58ap.onrender.com",
     "VITE_SUPABASE_URL": "https://usuaxpunqknbismkvgrf.supabase.co",
     "VITE_SUPABASE_ANON_KEY": "sb_publishable_R91mReXXGl4NTixiVPLkVQ_2YKt1pWY"
   }
