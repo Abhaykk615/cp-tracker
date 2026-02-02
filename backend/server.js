@@ -19,8 +19,8 @@ const PORT = process.env.PORT || 3000;
 app.use(helmet());
 app.use(cors({
   origin: process.env.NODE_ENV === 'production' 
-    ? process.env.FRONTEND_PROD_URL 
-    : 'http://localhost:5173',
+    ? [process.env.FRONTEND_PROD_URL, 'https://cp-tracker.vercel.app']
+    : ['http://localhost:5173', 'http://localhost:3000'],
   credentials: true,
   exposedHeaders: ['Authorization']
 }));
