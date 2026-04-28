@@ -69,6 +69,19 @@ ALTER TABLE public.profiles ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.contest_ranking_info ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.total_questions ENABLE ROW LEVEL SECURITY;
 
+-- Drop existing policies (safe to run multiple times)
+DROP POLICY IF EXISTS "Users can view their own profile" ON public.profiles;
+DROP POLICY IF EXISTS "Users can update their own profile" ON public.profiles;
+DROP POLICY IF EXISTS "Users can insert their own profile" ON public.profiles;
+
+DROP POLICY IF EXISTS "Users can view their own contest data" ON public.contest_ranking_info;
+DROP POLICY IF EXISTS "Users can update their own contest data" ON public.contest_ranking_info;
+DROP POLICY IF EXISTS "Users can insert their own contest data" ON public.contest_ranking_info;
+
+DROP POLICY IF EXISTS "Users can view their own questions data" ON public.total_questions;
+DROP POLICY IF EXISTS "Users can update their own questions data" ON public.total_questions;
+DROP POLICY IF EXISTS "Users can insert their own questions data" ON public.total_questions;
+
 -- Create policies for profiles table
 CREATE POLICY "Users can view their own profile" 
   ON public.profiles FOR SELECT USING (auth.uid() = id);
