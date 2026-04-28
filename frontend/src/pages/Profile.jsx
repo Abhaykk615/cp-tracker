@@ -286,11 +286,10 @@ export default function Profile() {
                         value={profileData.name}
                         onChange={handleChange}
                         readOnly={!editableFields.name}
-                        className={`block w-full pl-10 pr-3 py-2 border rounded-md ${
-                          editableFields.name
+                        className={`block w-full pl-10 pr-3 py-2 border rounded-md ${editableFields.name
                             ? 'bg-white dark:bg-gray-700 text-gray-900 dark:text-white border-gray-300 dark:border-gray-600'
                             : 'bg-gray-100 dark:bg-gray-700 text-gray-500 dark:text-gray-400 cursor-not-allowed border-transparent'
-                        } sm:text-sm`}
+                          } sm:text-sm`}
                         required
                       />
                     </div>
@@ -349,11 +348,10 @@ export default function Profile() {
                         value={profileData.gender}
                         onChange={handleChange}
                         readOnly={!editableFields.gender}
-                        className={`block w-full pl-10 pr-3 py-2 border rounded-md ${
-                          editableFields.gender
+                        className={`block w-full pl-10 pr-3 py-2 border rounded-md ${editableFields.gender
                             ? 'bg-white dark:bg-gray-700 text-gray-900 dark:text-white border-gray-300 dark:border-gray-600'
                             : 'bg-gray-100 dark:bg-gray-700 text-gray-500 dark:text-gray-400 cursor-not-allowed border-transparent'
-                        } sm:text-sm`}
+                          } sm:text-sm`}
                         placeholder="e.g. Male, Female, Non-binary"
                       />
                     </div>
@@ -387,11 +385,10 @@ export default function Profile() {
                         value={profileData.location}
                         onChange={handleChange}
                         readOnly={!editableFields.location}
-                        className={`block w-full pl-10 pr-3 py-2 border rounded-md ${
-                          editableFields.location
+                        className={`block w-full pl-10 pr-3 py-2 border rounded-md ${editableFields.location
                             ? 'bg-white dark:bg-gray-700 text-gray-900 dark:text-white border-gray-300 dark:border-gray-600'
                             : 'bg-gray-100 dark:bg-gray-700 text-gray-500 dark:text-gray-400 cursor-not-allowed border-transparent'
-                        } sm:text-sm`}
+                          } sm:text-sm`}
                         placeholder="e.g. New York, USA"
                       />
                     </div>
@@ -425,11 +422,10 @@ export default function Profile() {
                         value={profileData.education}
                         onChange={handleChange}
                         readOnly={!editableFields.education}
-                        className={`block w-full pl-10 pr-3 py-2 border rounded-md ${
-                          editableFields.education
+                        className={`block w-full pl-10 pr-3 py-2 border rounded-md ${editableFields.education
                             ? 'bg-white dark:bg-gray-700 text-gray-900 dark:text-white border-gray-300 dark:border-gray-600'
                             : 'bg-gray-100 dark:bg-gray-700 text-gray-500 dark:text-gray-400 cursor-not-allowed border-transparent'
-                        } sm:text-sm`}
+                          } sm:text-sm`}
                         placeholder="e.g. University of Example, BSc Computer Science"
                       />
                     </div>
@@ -466,11 +462,10 @@ export default function Profile() {
                         value={profileData.github}
                         onChange={handleChange}
                         readOnly={!editableFields.github}
-                        className={`block w-full pl-10 pr-3 py-2 border rounded-md ${
-                          editableFields.github
+                        className={`block w-full pl-10 pr-3 py-2 border rounded-md ${editableFields.github
                             ? 'bg-white dark:bg-gray-700 text-gray-900 dark:text-white border-gray-300 dark:border-gray-600'
                             : 'bg-gray-100 dark:bg-gray-700 text-gray-500 dark:text-gray-400 cursor-not-allowed border-transparent'
-                        } sm:text-sm`}
+                          } sm:text-sm`}
                         placeholder="your GitHub username"
                       />
                     </div>
@@ -504,11 +499,10 @@ export default function Profile() {
                         value={profileData.linkedin}
                         onChange={handleChange}
                         readOnly={!editableFields.linkedin}
-                        className={`block w-full pl-10 pr-3 py-2 border rounded-md ${
-                          editableFields.linkedin
+                        className={`block w-full pl-10 pr-3 py-2 border rounded-md ${editableFields.linkedin
                             ? 'bg-white dark:bg-gray-700 text-gray-900 dark:text-white border-gray-300 dark:border-gray-600'
                             : 'bg-gray-100 dark:bg-gray-700 text-gray-500 dark:text-gray-400 cursor-not-allowed border-transparent'
-                        } sm:text-sm`}
+                          } sm:text-sm`}
                         placeholder="your LinkedIn username or profile URL"
                       />
                     </div>
@@ -549,11 +543,10 @@ export default function Profile() {
                           onChange={handleChange}
                           readOnly={!editableFields[id]}
                           maxLength={maxLength}
-                          className={`block w-full pl-10 pr-3 py-2 border rounded-md ${
-                            editableFields[id]
+                          className={`block w-full pl-10 pr-3 py-2 border rounded-md ${editableFields[id]
                               ? 'bg-white dark:bg-gray-700 text-gray-900 dark:text-white border-gray-300 dark:border-gray-600'
                               : 'bg-gray-100 dark:bg-gray-700 text-gray-500 dark:text-gray-400 cursor-not-allowed border-transparent'
-                          } sm:text-sm`}
+                            } sm:text-sm`}
                           placeholder={`${label}`}
                         />
                       </div>
@@ -593,11 +586,10 @@ export default function Profile() {
                   <button
                     type="submit"
                     disabled={!hasChanges || isSaving}
-                    className={`inline-flex items-center px-4 py-2 text-white text-sm font-medium rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 ${
-                      !hasChanges || isSaving
+                    className={`inline-flex items-center px-4 py-2 text-white text-sm font-medium rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 ${!hasChanges || isSaving
                         ? 'bg-gray-400 cursor-not-allowed focus:ring-gray-500'
                         : 'bg-blue-600 hover:bg-blue-700 focus:ring-blue-500'
-                    } transition-colors`}
+                      } transition-colors`}
                   >
                     {isSaving ? (
                       <>

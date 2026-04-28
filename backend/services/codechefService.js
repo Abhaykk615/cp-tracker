@@ -77,39 +77,50 @@ const codechefService = {
 
   async extractSubmissionHeatmap(username) {
     try {
-      const apiUrl = `https://codechef-api.vercel.app/handle/${username}`;
-      console.log(`Fetching heatmap data from API: ${apiUrl}`);
-
-      const response = await axios.get(apiUrl);
-
-      if (!response.data || !response.data.success) {
-        console.error("API returned error:", response.data);
-        throw new Error("Failed to fetch heatmap data from API");
-      }
-
-      const heatmapData = response.data.heatMap || [];
-
-      const activeDays = heatmapData.length;
-
-      // Calculate total submissions
-      let totalSubmissions = 0;
-      heatmapData.forEach((day) => {
-        totalSubmissions += parseInt(day.value || 0);
+      console.log(`Fetching heatmap data for ${username} from CodeChef profile page...`);
+      const response = await axios.get(
+        `https://www.codechef.com/users/${username}`,
+        {
+          headers: {
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
+          }
+        }
+      );
+      
+      const $ = cheerio.load(response.data);
+      let heatmapData = [];
+      
+      // Look for the script tag containing userDailySubmissionsStats
+      $('script').each((i, elem) => {
+        const content = $(elem).html();
+        if (content && content.includes('userDailySubmissionsStats')) {
+          const match = content.match(/userDailySubmissionsStats\s*=\s*(\[.*?\]);/);
+          if (match && match[1]) {
+            try {
+              heatmapData = JSON.parse(match[1]);
+            } catch (e) {
+              console.error("Error parsing CodeChef heatmap JSON:", e);
+            }
+          }
+        }
       });
+
+      if (heatmapData.length === 0) {
+        console.warn(`No heatmap data found for user ${username}`);
+      }
 
       const formattedData = heatmapData.map((day) => ({
         date: day.date,
         count: parseInt(day.value || 0),
       }));
 
-      // Return the formatted data
       return {
-        activeDays,
-        totalSubmissions,
+        activeDays: formattedData.length,
+        totalSubmissions: formattedData.reduce((sum, day) => sum + day.count, 0),
         heatmapData: formattedData,
       };
     } catch (error) {
-      console.error("Error extracting submission heatmap:", error);
+      console.error("Error extracting submission heatmap from page:", error);
       throw new Error(`Failed to extract submission heatmap: ${error.message}`);
     }
   },

@@ -1,7 +1,7 @@
 services:
   # Backend Service
   - type: web
-    name: cpier-backend
+    name: cp-tracker
     env: node
     repo: https://github.com/Abhaykk615/cp-tracker.git
     rootDir: backend
@@ -25,6 +25,8 @@ services:
     envVars:
       - key: VITE_API_URL
         value: https://cp-tracker-58ap.onrender.com
+      - key: FRONTEND_PROD_URL
+        value: https://cp-tracker.vercel.app
       - fromGroup: supabase-config
 
 # Environment Groups

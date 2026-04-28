@@ -16,20 +16,26 @@ class CombinedService {
 
     const heatmap = new Map();
 
-    results.forEach(({ status, value }) => {
+    results.forEach(({ status, value, reason }, index) => {
+      const platformNames = ['leetcode', 'codeforces', 'codechef'];
+      const platform = platformNames[index];
+      
       if (status === 'fulfilled' && value) {
-        value.forEach(({ date, count, platform }) => {
+        console.log(`Heatmap: Successfully fetched ${value.length} entries for ${platform}`);
+        value.forEach(({ date, count, platform: p }) => {
           const key = date;
           const existing = heatmap.get(key) || { count: 0, platforms: {} };
           heatmap.set(key, {
             count: existing.count + count,
             platforms: {
               ...existing.platforms,
-              [platform]: (existing.platforms[platform] || 0) + count
+              [p]: (existing.platforms[p] || 0) + count
             },
             date
           });
         });
+      } else {
+        console.error(`Heatmap: Failed to fetch data for ${platform}. Reason:`, reason || 'Unknown error');
       }
     });
 

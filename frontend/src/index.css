@@ -19,26 +19,35 @@
   }
 
 
-/* Custom color scale - vibrant green gradient */
+/* Platform specific heatmap colors */
 
-.react-calendar-heatmap .color-empty {
-  fill: rgba(107, 114, 128, 0.7) !important;
-}
-.color-scale-5 {
-  fill: rgba(52, 211, 153, 0.4);
-}
-.color-scale-4 {
-  fill: rgba(52, 211, 153, 0.7);
-}
-.color-scale-3 {
-  fill: rgba(52, 211, 153, 0.9);
-}
-.color-scale-2 {
-  fill: rgba(16, 185, 129, 1);
-}
-.color-scale-1 {
-  fill: rgba(5, 150, 105, 1);
-}
+/* LeetCode - Green Scale */
+.color-leetcode-1 { fill: rgba(16, 185, 129, 0.2) !important; }
+.color-leetcode-2 { fill: rgba(16, 185, 129, 0.4) !important; }
+.color-leetcode-3 { fill: rgba(16, 185, 129, 0.6) !important; }
+.color-leetcode-4 { fill: rgba(16, 185, 129, 0.8) !important; }
+.color-leetcode-5 { fill: rgba(16, 185, 129, 1.0) !important; }
+
+/* CodeChef - Yellow/Orange Scale */
+.color-codechef-1 { fill: rgba(245, 158, 11, 0.2) !important; }
+.color-codechef-2 { fill: rgba(245, 158, 11, 0.4) !important; }
+.color-codechef-3 { fill: rgba(245, 158, 11, 0.6) !important; }
+.color-codechef-4 { fill: rgba(245, 158, 11, 0.8) !important; }
+.color-codechef-5 { fill: rgba(245, 158, 11, 1.0) !important; }
+
+/* Codeforces - Blue Scale */
+.color-codeforces-1 { fill: rgba(59, 130, 246, 0.2) !important; }
+.color-codeforces-2 { fill: rgba(59, 130, 246, 0.4) !important; }
+.color-codeforces-3 { fill: rgba(59, 130, 246, 0.6) !important; }
+.color-codeforces-4 { fill: rgba(59, 130, 246, 0.8) !important; }
+.color-codeforces-5 { fill: rgba(59, 130, 246, 1.0) !important; }
+
+/* Fallback/Default Scale (used for 'all' or unknown) */
+.color-scale-1 { fill: rgba(107, 114, 128, 0.2) !important; }
+.color-scale-2 { fill: rgba(107, 114, 128, 0.4) !important; }
+.color-scale-3 { fill: rgba(107, 114, 128, 0.6) !important; }
+.color-scale-4 { fill: rgba(107, 114, 128, 0.8) !important; }
+.color-scale-5 { fill: rgba(107, 114, 128, 1.0) !important; }
 
 /* Improve calendar UI */
 .react-calendar-heatmap .color-empty {

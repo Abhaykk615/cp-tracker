@@ -36,7 +36,25 @@ const EnhancedCalendarHeatmap = ({
     if (!value || value.count === 0) return 'color-empty';
     const intensity = Math.min(value.count, 20);
     const level = Math.min(Math.ceil(intensity / 4), 5);
-    return `color-scale-${level}`;
+    
+    if (selectedPlatform !== 'all') {
+      return `color-${selectedPlatform}-${level}`;
+    }
+    
+    // When showing 'all', determine the dominant platform for coloring
+    let dominantPlatform = 'leetcode'; // Default
+    let maxSubmissions = 0;
+    
+    if (value.platforms) {
+      Object.entries(value.platforms).forEach(([platform, count]) => {
+        if (count > maxSubmissions) {
+          maxSubmissions = count;
+          dominantPlatform = platform;
+        }
+      });
+    }
+    
+    return `color-${dominantPlatform}-${level}`;
   };
 
   const handleMouseOver = (event, value) => {
